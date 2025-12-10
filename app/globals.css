@@ -49,9 +49,9 @@ html {
   background: #0d9488;
 }
 
-/* Ensure small font sizes throughout */
-* {
-  font-size: inherit;
+/* Ensure small font sizes throughout - but allow headings to override */
+h1, h2, h3, h4, h5, h6 {
+  font-size: revert;
 }
 
 /* Smooth animations */
