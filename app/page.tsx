@@ -124,7 +124,7 @@ export default function Home() {
             <span className="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full font-medium">24/7 Home Care</span>
             <span className="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full font-medium">Trusted by 500+ Families</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 leading-tight">
+          <h1 className="text-[48px] font-bold mb-6 leading-tight">
             Professional Home Nursing &<br />Physiotherapy – At Your Doorstep
           </h1>
           <p className="text-base sm:text-lg lg:text-xl mb-10 max-w-3xl mx-auto opacity-95">
@@ -154,7 +154,7 @@ export default function Home() {
           isVisible.has('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="text-center mb-10">
-            <h2 className="text-[56px] font-bold text-gray-900 mb-4">Our Services</h2>
+            <h2 className="text-[48px] font-bold text-gray-900 mb-4">Our Services</h2>
             <p className="text-base text-gray-600 max-w-2xl mx-auto">Comprehensive healthcare services delivered with care and professionalism</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -224,7 +224,7 @@ export default function Home() {
           isVisible.has('why-choose') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="text-center mb-10">
-            <h2 className="text-[56px] font-bold text-gray-900 mb-4">Why Choose Us</h2>
+            <h2 className="text-[48px] font-bold text-gray-900 mb-4">Why Choose Us</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -283,7 +283,7 @@ export default function Home() {
           isVisible.has('featured') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="text-center mb-10">
-            <h2 className="text-[56px] font-bold text-gray-900 mb-4">Featured Services</h2>
+            <h2 className="text-[48px] font-bold text-gray-900 mb-4">Featured Services</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -331,7 +331,7 @@ export default function Home() {
           isVisible.has('how-it-works') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="text-center mb-10">
-            <h2 className="text-[56px] font-bold text-gray-900 mb-4">How It Works</h2>
+            <h2 className="text-[48px] font-bold text-gray-900 mb-4">How It Works</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -384,7 +384,7 @@ export default function Home() {
           isVisible.has('testimonials') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="text-center mb-10">
-            <h2 className="text-[56px] font-bold text-gray-900 mb-4">Client Reviews</h2>
+            <h2 className="text-[48px] font-bold text-gray-900 mb-4">Client Reviews</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -430,7 +430,7 @@ export default function Home() {
           isVisible.has('packages') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="text-center mb-10">
-            <h2 className="text-[56px] font-bold text-gray-900 mb-4">Care Packages</h2>
+            <h2 className="text-[48px] font-bold text-gray-900 mb-4">Care Packages</h2>
             <p className="text-base text-gray-600">Choose a package that suits your needs</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -493,7 +493,7 @@ export default function Home() {
               />
             </div>
             <div>
-              <h2 className="text-[56px] font-bold text-gray-900 mb-6">About Us</h2>
+              <h2 className="text-[48px] font-bold text-gray-900 mb-6">About Us</h2>
               <p className="text-sm text-gray-600 mb-6 leading-relaxed">
                 We provide compassionate medical support to patients in the comfort of their homes. With years of experience in home healthcare, our team of certified nurses and physiotherapists is dedicated to delivering quality care that promotes healing and well-being.
               </p>
@@ -530,7 +530,7 @@ export default function Home() {
       <section className="relative py-10 lg:py-12 bg-white flex items-center justify-center min-h-[50vh]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center mb-10">
-            <h2 className="text-[56px] font-bold text-gray-900 mb-4">Our Care in Action</h2>
+            <h2 className="text-[48px] font-bold text-gray-900 mb-4">Our Care in Action</h2>
             <p className="text-base text-gray-600">Witness our dedicated healthcare professionals providing compassionate care</p>
           </div>
           <div className="relative h-[350px] md:h-[400px] lg:h-[450px] max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl border border-gray-200">
@@ -600,7 +600,7 @@ export default function Home() {
           isVisible.has('safety') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="text-center mb-10">
-            <h2 className="text-[56px] font-bold text-gray-900 mb-4">Safety Protocols</h2>
+            <h2 className="text-[48px] font-bold text-gray-900 mb-4">Safety Protocols</h2>
             <p className="text-base text-gray-600">Your safety is our priority</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -649,7 +649,7 @@ export default function Home() {
           isVisible.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="text-center mb-10">
-            <h2 className="text-[56px] font-bold text-gray-900 mb-4">Request a Home Visit</h2>
+            <h2 className="text-[48px] font-bold text-gray-900 mb-4">Request a Home Visit</h2>
             <p className="text-base text-gray-600">Fill out the form below and we'll get back to you shortly</p>
           </div>
           <div className="bg-gray-50 p-8 rounded-xl border border-gray-200">
