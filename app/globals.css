@@ -96,3 +96,30 @@ html {
 .group:hover {
   will-change: transform;
 }
+
+/* Smooth section animations */
+section > div {
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Staggered animation delays for cards */
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+/* Slider smooth transition */
+.slider-transition {
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}

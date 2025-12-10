@@ -1,11 +1,15 @@
 'use client';
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isVisible, setIsVisible] = useState<Set<string>>(new Set());
+  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
+  // Scroll animation observer
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -13,6 +17,49 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Intersection Observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('data-section-id');
+            if (id) {
+              setIsVisible((prev) => new Set(prev).add(id));
+            }
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    Object.values(sectionRefs.current).forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      Object.values(sectionRefs.current).forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
+  // Auto-slide for image slider
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % 5);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const sliderImages = [
+    "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1200&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=1200&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=1200&h=600&fit=crop"
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -94,9 +141,80 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 lg:py-24 bg-white">
+      {/* Image Slider Section */}
+      <section className="relative py-16 lg:py-20 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Our Care in Action</h2>
+            <p className="text-base text-gray-600">Witness our dedicated healthcare professionals providing compassionate care</p>
+          </div>
+          <div className="relative h-64 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div 
+              className="flex transition-transform duration-1000 ease-in-out h-full"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {sliderImages.map((img, index) => (
+                <div key={index} className="min-w-full h-full relative">
+                  <Image
+                    src={img}
+                    alt={`Patient care ${index + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Slider Navigation Dots */}
+            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+              {sliderImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    currentSlide === index ? 'w-8 bg-white' : 'w-2 bg-white/50'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length)}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-teal-600 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              aria-label="Previous slide"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev + 1) % sliderImages.length)}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-teal-600 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              aria-label="Next slide"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section 
+        id="services" 
+        className="py-20 lg:py-24 bg-white"
+        ref={(el) => {
+          if (el) sectionRefs.current['services'] = el as HTMLElement;
+        }}
+        data-section-id="services"
+      >
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 ${
+          isVisible.has('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="text-center mb-16">
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Our Services</h2>
             <p className="text-base text-gray-600 max-w-2xl mx-auto">Comprehensive healthcare services delivered with care and professionalism</p>
@@ -144,7 +262,9 @@ export default function Home() {
                 </svg>
               )}
             ].map((service, i) => (
-              <div key={i} className="group bg-gray-50 p-6 rounded-xl border border-gray-100 cursor-pointer transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] hover:border-teal-300 hover:bg-white">
+              <div key={i} className={`group bg-gray-50 p-6 rounded-xl border border-gray-100 cursor-pointer transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] hover:border-teal-300 hover:bg-white ${
+                isVisible.has('services') ? 'animate-fade-in-up' : 'opacity-0'
+              }`} style={{ animationDelay: `${i * 100}ms`, animationFillMode: 'both' }}>
                 <div className="text-teal-600 mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">{service.icon}</div>
                 <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors duration-300">{service.title}</h3>
                 <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
@@ -155,8 +275,16 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 lg:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section 
+        className="py-20 lg:py-24 bg-gray-50"
+        ref={(el) => {
+          if (el) sectionRefs.current['why-choose'] = el as HTMLElement;
+        }}
+        data-section-id="why-choose"
+      >
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-200 ${
+          isVisible.has('why-choose') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="text-center mb-16">
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
           </div>
@@ -193,7 +321,9 @@ export default function Home() {
                 </svg>
               )}
             ].map((item, i) => (
-              <div key={i} className="group bg-white p-6 rounded-xl border border-gray-200 cursor-pointer transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] hover:border-teal-300 hover:bg-teal-50">
+              <div key={i} className={`group bg-white p-6 rounded-xl border border-gray-200 cursor-pointer transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] hover:border-teal-300 hover:bg-teal-50 ${
+                isVisible.has('why-choose') ? 'animate-fade-in-up' : 'opacity-0'
+              }`} style={{ animationDelay: `${i * 100}ms`, animationFillMode: 'both' }}>
                 <div className="w-12 h-12 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-teal-600 group-hover:text-white group-hover:rotate-6">{item.icon}</div>
                 <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors duration-300">{item.title}</h3>
                 <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
@@ -204,8 +334,16 @@ export default function Home() {
       </section>
 
       {/* Featured Services */}
-      <section className="py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section 
+        className="py-20 lg:py-24 bg-white"
+        ref={(el) => {
+          if (el) sectionRefs.current['featured'] = el as HTMLElement;
+        }}
+        data-section-id="featured"
+      >
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-300 ${
+          isVisible.has('featured') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="text-center mb-16">
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Featured Services</h2>
           </div>
@@ -244,8 +382,16 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 lg:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section 
+        className="py-20 lg:py-24 bg-gray-50"
+        ref={(el) => {
+          if (el) sectionRefs.current['how-it-works'] = el as HTMLElement;
+        }}
+        data-section-id="how-it-works"
+      >
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-200 ${
+          isVisible.has('how-it-works') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="text-center mb-16">
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">How It Works</h2>
           </div>
@@ -288,8 +434,17 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section 
+        id="testimonials" 
+        className="py-20 lg:py-24 bg-white"
+        ref={(el) => {
+          if (el) sectionRefs.current['testimonials'] = el as HTMLElement;
+        }}
+        data-section-id="testimonials"
+      >
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-300 ${
+          isVisible.has('testimonials') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="text-center mb-16">
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Client Reviews</h2>
           </div>
@@ -325,8 +480,17 @@ export default function Home() {
       </section>
 
       {/* Packages/Pricing */}
-      <section id="packages" className="py-20 lg:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section 
+        id="packages" 
+        className="py-20 lg:py-24 bg-gray-50"
+        ref={(el) => {
+          if (el) sectionRefs.current['packages'] = el as HTMLElement;
+        }}
+        data-section-id="packages"
+      >
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-200 ${
+          isVisible.has('packages') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="text-center mb-16">
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Care Packages</h2>
             <p className="text-base text-gray-600">Choose a package that suits your needs</p>
@@ -371,11 +535,19 @@ export default function Home() {
       </section>
 
       {/* About Us */}
-      <section className="py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section 
+        className="py-20 lg:py-24 bg-white"
+        ref={(el) => {
+          if (el) sectionRefs.current['about'] = el as HTMLElement;
+        }}
+        data-section-id="about"
+      >
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-300 ${
+          isVisible.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-96 rounded-xl overflow-hidden">
-              <Image
+            <Image
                 src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop"
                 alt="Care team"
                 fill
@@ -417,8 +589,16 @@ export default function Home() {
       </section>
 
       {/* Safety Protocols */}
-      <section className="py-20 lg:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section 
+        className="py-20 lg:py-24 bg-gray-50"
+        ref={(el) => {
+          if (el) sectionRefs.current['safety'] = el as HTMLElement;
+        }}
+        data-section-id="safety"
+      >
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-200 ${
+          isVisible.has('safety') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="text-center mb-16">
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Safety Protocols</h2>
             <p className="text-base text-gray-600">Your safety is our priority</p>
@@ -457,8 +637,17 @@ export default function Home() {
       </section>
 
       {/* Contact/Booking Form */}
-      <section id="contact" className="py-20 lg:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section 
+        id="contact" 
+        className="py-20 lg:py-24 bg-white"
+        ref={(el) => {
+          if (el) sectionRefs.current['contact'] = el as HTMLElement;
+        }}
+        data-section-id="contact"
+      >
+        <div className={`max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-300 ${
+          isVisible.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="text-center mb-16">
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Request a Home Visit</h2>
             <p className="text-base text-gray-600">Fill out the form below and we'll get back to you shortly</p>
