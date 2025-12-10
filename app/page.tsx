@@ -144,7 +144,7 @@ export default function Home() {
       {/* Services Section */}
       <section 
         id="services" 
-        className="py-20 lg:py-24 bg-white"
+        className="py-12 lg:py-16 bg-white"
         ref={(el) => {
           if (el) sectionRefs.current['services'] = el as HTMLElement;
         }}
@@ -153,7 +153,7 @@ export default function Home() {
         <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 ${
           isVisible.has('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-[56px] font-bold text-gray-900 mb-4">Our Services</h2>
             <p className="text-base text-gray-600 max-w-2xl mx-auto">Comprehensive healthcare services delivered with care and professionalism</p>
           </div>
@@ -214,7 +214,7 @@ export default function Home() {
 
       {/* Why Choose Us */}
       <section 
-        className="py-20 lg:py-24 bg-gray-50"
+        className="py-12 lg:py-16 bg-gray-50"
         ref={(el) => {
           if (el) sectionRefs.current['why-choose'] = el as HTMLElement;
         }}
@@ -223,7 +223,7 @@ export default function Home() {
         <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-200 ${
           isVisible.has('why-choose') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-[56px] font-bold text-gray-900 mb-4">Why Choose Us</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -273,7 +273,7 @@ export default function Home() {
 
       {/* Featured Services */}
       <section 
-        className="py-20 lg:py-24 bg-white"
+        className="py-12 lg:py-16 bg-white"
         ref={(el) => {
           if (el) sectionRefs.current['featured'] = el as HTMLElement;
         }}
@@ -282,7 +282,7 @@ export default function Home() {
         <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-300 ${
           isVisible.has('featured') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-[56px] font-bold text-gray-900 mb-4">Featured Services</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -321,7 +321,7 @@ export default function Home() {
 
       {/* How It Works */}
       <section 
-        className="py-20 lg:py-24 bg-gray-50"
+        className="py-12 lg:py-16 bg-gray-50"
         ref={(el) => {
           if (el) sectionRefs.current['how-it-works'] = el as HTMLElement;
         }}
@@ -330,7 +330,7 @@ export default function Home() {
         <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-200 ${
           isVisible.has('how-it-works') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-[56px] font-bold text-gray-900 mb-4">How It Works</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -374,7 +374,7 @@ export default function Home() {
       {/* Testimonials */}
       <section 
         id="testimonials" 
-        className="py-20 lg:py-24 bg-white"
+        className="py-12 lg:py-16 bg-white"
         ref={(el) => {
           if (el) sectionRefs.current['testimonials'] = el as HTMLElement;
         }}
@@ -383,7 +383,7 @@ export default function Home() {
         <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-300 ${
           isVisible.has('testimonials') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-[56px] font-bold text-gray-900 mb-4">Client Reviews</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -420,7 +420,7 @@ export default function Home() {
       {/* Packages/Pricing */}
       <section 
         id="packages" 
-        className="py-20 lg:py-24 bg-gray-50"
+        className="py-12 lg:py-16 bg-gray-50"
         ref={(el) => {
           if (el) sectionRefs.current['packages'] = el as HTMLElement;
         }}
@@ -429,7 +429,7 @@ export default function Home() {
         <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-200 ${
           isVisible.has('packages') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-[56px] font-bold text-gray-900 mb-4">Care Packages</h2>
             <p className="text-base text-gray-600">Choose a package that suits your needs</p>
           </div>
@@ -474,7 +474,7 @@ export default function Home() {
 
       {/* About Us */}
       <section 
-        className="py-20 lg:py-24 bg-white"
+        className="py-12 lg:py-16 bg-white"
         ref={(el) => {
           if (el) sectionRefs.current['about'] = el as HTMLElement;
         }}
@@ -527,7 +527,7 @@ export default function Home() {
       </section>
 
       {/* Image Slider Section */}
-      <section className="relative py-20 lg:py-32 bg-white flex items-center justify-center min-h-[60vh]">
+      <section className="relative py-10 lg:py-12 bg-white flex items-center justify-center min-h-[50vh]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center mb-10">
             <h2 className="text-[56px] font-bold text-gray-900 mb-4">Our Care in Action</h2>
@@ -590,7 +590,7 @@ export default function Home() {
 
       {/* Safety Protocols */}
       <section 
-        className="py-20 lg:py-24 bg-gray-50"
+        className="py-12 lg:py-16 bg-gray-50"
         ref={(el) => {
           if (el) sectionRefs.current['safety'] = el as HTMLElement;
         }}
@@ -599,7 +599,7 @@ export default function Home() {
         <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-200 ${
           isVisible.has('safety') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-[56px] font-bold text-gray-900 mb-4">Safety Protocols</h2>
             <p className="text-base text-gray-600">Your safety is our priority</p>
           </div>
@@ -639,7 +639,7 @@ export default function Home() {
       {/* Contact/Booking Form */}
       <section 
         id="contact" 
-        className="py-20 lg:py-24 bg-white"
+        className="py-12 lg:py-16 bg-white"
         ref={(el) => {
           if (el) sectionRefs.current['contact'] = el as HTMLElement;
         }}
@@ -648,7 +648,7 @@ export default function Home() {
         <div className={`max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 delay-300 ${
           isVisible.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-[56px] font-bold text-gray-900 mb-4">Request a Home Visit</h2>
             <p className="text-base text-gray-600">Fill out the form below and we'll get back to you shortly</p>
           </div>
