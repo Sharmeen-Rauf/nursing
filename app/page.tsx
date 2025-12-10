@@ -124,7 +124,7 @@ export default function Home() {
             <span className="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full font-medium">24/7 Home Care</span>
             <span className="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full font-medium">Trusted by 500+ Families</span>
           </div>
-          <h1 className="text-[48px] font-bold mb-6 leading-tight">
+          <h1 className="text-[48px] font-bold mb-6 leading-tight" style={{ fontSize: '48px' }}>
             Professional Home Nursing &<br />Physiotherapy – At Your Doorstep
           </h1>
           <p className="text-base sm:text-lg lg:text-xl mb-10 max-w-3xl mx-auto opacity-95">
@@ -154,7 +154,7 @@ export default function Home() {
           isVisible.has('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="text-center mb-10">
-            <h2 className="text-[48px] font-bold text-gray-900 mb-4">Our Services</h2>
+            <h2 className="text-[48px] font-bold text-gray-900 mb-4" style={{ fontSize: '48px' }}>Our Services</h2>
             <p className="text-base text-gray-600 max-w-2xl mx-auto">Comprehensive healthcare services delivered with care and professionalism</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -224,7 +224,7 @@ export default function Home() {
           isVisible.has('why-choose') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="text-center mb-10">
-            <h2 className="text-[48px] font-bold text-gray-900 mb-4">Why Choose Us</h2>
+            <h2 className="text-[48px] font-bold text-gray-900 mb-4" style={{ fontSize: '48px' }}>Why Choose Us</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -283,7 +283,7 @@ export default function Home() {
           isVisible.has('featured') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="text-center mb-10">
-            <h2 className="text-[48px] font-bold text-gray-900 mb-4">Featured Services</h2>
+            <h2 className="text-[48px] font-bold text-gray-900 mb-4" style={{ fontSize: '48px' }}>Featured Services</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
