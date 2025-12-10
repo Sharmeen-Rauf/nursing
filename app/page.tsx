@@ -69,7 +69,7 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-teal-900/90 via-teal-800/85 to-teal-900/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-teal-900/60 via-teal-800/55 to-teal-900/60"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex flex-wrap justify-center gap-3 mb-8 text-xs">
@@ -98,7 +98,7 @@ export default function Home() {
       <section id="services" className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Our Services</h2>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Our Services</h2>
             <p className="text-base text-gray-600 max-w-2xl mx-auto">Comprehensive healthcare services delivered with care and professionalism</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -158,7 +158,7 @@ export default function Home() {
       <section className="py-20 lg:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -207,7 +207,7 @@ export default function Home() {
       <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Featured Services</h2>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Featured Services</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -247,7 +247,7 @@ export default function Home() {
       <section className="py-20 lg:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">How It Works</h2>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">How It Works</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -291,7 +291,7 @@ export default function Home() {
       <section id="testimonials" className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Client Reviews</h2>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Client Reviews</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -328,7 +328,7 @@ export default function Home() {
       <section id="packages" className="py-20 lg:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Care Packages</h2>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Care Packages</h2>
             <p className="text-base text-gray-600">Choose a package that suits your needs</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -383,7 +383,7 @@ export default function Home() {
               />
             </div>
             <div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">About Us</h2>
+              <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-6">About Us</h2>
               <p className="text-sm text-gray-600 mb-6 leading-relaxed">
                 We provide compassionate medical support to patients in the comfort of their homes. With years of experience in home healthcare, our team of certified nurses and physiotherapists is dedicated to delivering quality care that promotes healing and well-being.
               </p>
@@ -420,7 +420,7 @@ export default function Home() {
       <section className="py-20 lg:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Safety Protocols</h2>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Safety Protocols</h2>
             <p className="text-base text-gray-600">Your safety is our priority</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -460,7 +460,7 @@ export default function Home() {
       <section id="contact" className="py-20 lg:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Request a Home Visit</h2>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Request a Home Visit</h2>
             <p className="text-base text-gray-600">Fill out the form below and we'll get back to you shortly</p>
           </div>
           <div className="bg-gray-50 p-8 rounded-xl border border-gray-200">
