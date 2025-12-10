@@ -60,33 +60,34 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-teal-600 to-teal-800 text-white overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1920&h=1080&fit=crop"
             alt="Professional nurse"
             fill
-            className="object-cover opacity-20"
+            className="object-cover"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-teal-900/90 via-teal-800/85 to-teal-900/90"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex flex-wrap justify-center gap-3 mb-6 text-xs">
+          <div className="flex flex-wrap justify-center gap-3 mb-8 text-xs">
             <span className="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full font-medium">Certified Nurses</span>
             <span className="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full font-medium">24/7 Home Care</span>
             <span className="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full font-medium">Trusted by 500+ Families</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 leading-tight">
             Professional Home Nursing &<br />Physiotherapy – At Your Doorstep
           </h1>
-          <p className="text-sm sm:text-base lg:text-lg mb-8 max-w-3xl mx-auto opacity-90">
+          <p className="text-base sm:text-lg lg:text-xl mb-10 max-w-3xl mx-auto opacity-95">
             Certified nurses and therapists providing compassionate care and medical assistance at home.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-teal-600 px-8 py-3 rounded-full hover:bg-teal-50 transition-all font-semibold text-sm shadow-lg">
+            <button className="bg-white text-teal-600 px-10 py-4 rounded-full hover:bg-teal-50 transition-all font-semibold text-base shadow-xl">
               Book a Home Visit
             </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white/10 transition-all font-semibold text-sm">
+            <button className="border-2 border-white text-white px-10 py-4 rounded-full hover:bg-white/10 transition-all font-semibold text-base">
               Call Now / WhatsApp Now
             </button>
           </div>
@@ -94,25 +95,57 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 lg:py-20 bg-white">
+      <section id="services" className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Our Services</h2>
-            <p className="text-sm text-gray-600 max-w-2xl mx-auto">Comprehensive healthcare services delivered with care and professionalism</p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Our Services</h2>
+            <p className="text-base text-gray-600 max-w-2xl mx-auto">Comprehensive healthcare services delivered with care and professionalism</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Home Nursing Care", desc: "Vitals monitoring, dressing changes, IV/injections, post-surgery care", icon: "🏥" },
-              { title: "Physiotherapy at Home", desc: "Stroke rehab, joint pain, back pain, mobility exercises", icon: "💪" },
-              { title: "Elderly Care", desc: "Daily assistance, medication reminders, companionship", icon: "👴" },
-              { title: "Patient Attendant", desc: "Feeding, bathing, personal care", icon: "🛁" },
-              { title: "Mother & Baby Care", desc: "Postnatal care, newborn care", icon: "👶" },
-              { title: "Special Needs Care", desc: "Disability support, long-term care", icon: "♿" },
-              { title: "Chronic Disease Management", desc: "Diabetes, hypertension, heart care management", icon: "❤️" },
-              { title: "Palliative Care", desc: "Comfort care, pain management, emotional support", icon: "🤲" }
+              { title: "Home Nursing Care", desc: "Vitals monitoring, dressing changes, IV/injections, post-surgery care", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              )},
+              { title: "Physiotherapy at Home", desc: "Stroke rehab, joint pain, back pain, mobility exercises", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              )},
+              { title: "Elderly Care", desc: "Daily assistance, medication reminders, companionship", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              )},
+              { title: "Patient Attendant", desc: "Feeding, bathing, personal care", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+              )},
+              { title: "Mother & Baby Care", desc: "Postnatal care, newborn care", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              )},
+              { title: "Special Needs Care", desc: "Disability support, long-term care", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              )},
+              { title: "Chronic Disease Management", desc: "Diabetes, hypertension, heart care management", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              )},
+              { title: "Palliative Care", desc: "Comfort care, pain management, emotional support", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              )}
             ].map((service, i) => (
               <div key={i} className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-all border border-gray-100">
-                <div className="text-4xl mb-4">{service.icon}</div>
+                <div className="text-teal-600 mb-4">{service.icon}</div>
                 <h3 className="text-base font-bold text-gray-900 mb-2">{service.title}</h3>
                 <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
               </div>
@@ -122,22 +155,46 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 lg:py-20 bg-gray-50">
+      <section className="py-20 lg:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Why Choose Us</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Licensed & Experienced Nurses", desc: "All our nurses are fully certified and have years of experience in home healthcare", icon: "✓" },
-              { title: "24/7 Availability", desc: "Round-the-clock services for emergencies and scheduled care", icon: "⏰" },
-              { title: "Flexible Care Packages", desc: "Customized packages to suit your specific needs and budget", icon: "📋" },
-              { title: "Trusted by Hospitals & Clinics", desc: "Partnered with leading healthcare institutions", icon: "🏥" },
-              { title: "Same-Day Home Visits", desc: "Quick response time with same-day appointment availability", icon: "🚀" },
-              { title: "Affordable & Safe Services", desc: "Transparent pricing with complete safety protocols", icon: "💰" }
+              { title: "Licensed & Experienced Nurses", desc: "All our nurses are fully certified and have years of experience in home healthcare", icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              )},
+              { title: "24/7 Availability", desc: "Round-the-clock services for emergencies and scheduled care", icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              )},
+              { title: "Flexible Care Packages", desc: "Customized packages to suit your specific needs and budget", icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+              )},
+              { title: "Trusted by Hospitals & Clinics", desc: "Partnered with leading healthcare institutions", icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              )},
+              { title: "Same-Day Home Visits", desc: "Quick response time with same-day appointment availability", icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              )},
+              { title: "Affordable & Safe Services", desc: "Transparent pricing with complete safety protocols", icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              )}
             ].map((item, i) => (
               <div key={i} className="bg-white p-6 rounded-xl border border-gray-200">
-                <div className="w-10 h-10 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center text-xl font-bold mb-4">{item.icon}</div>
+                <div className="w-12 h-12 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center mb-4">{item.icon}</div>
                 <h3 className="text-base font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
@@ -147,23 +204,35 @@ export default function Home() {
       </section>
 
       {/* Featured Services */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Featured Services</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Featured Services</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Home Nursing (RN/LPN)", desc: "Daily medical care and monitoring by registered nurses", icon: "👩‍⚕️", image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&h=400&fit=crop" },
-              { title: "Home Physiotherapy", desc: "Pain management and mobility recovery at your convenience", icon: "🏃", image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop" },
-              { title: "Post-Surgery Care", desc: "Support for patients recovering at home with expert assistance", icon: "🏥", image: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=600&h=400&fit=crop" }
+              { title: "Home Nursing (RN/LPN)", desc: "Daily medical care and monitoring by registered nurses", icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              ), image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&h=400&fit=crop" },
+              { title: "Home Physiotherapy", desc: "Pain management and mobility recovery at your convenience", icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              ), image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop" },
+              { title: "Post-Surgery Care", desc: "Support for patients recovering at home with expert assistance", icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              ), image: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=600&h=400&fit=crop" }
             ].map((service, i) => (
               <div key={i} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-200">
                 <div className="relative h-48">
                   <Image src={service.image} alt={service.title} fill className="object-cover" />
                 </div>
                 <div className="p-6">
-                  <div className="text-3xl mb-3">{service.icon}</div>
+                  <div className="text-teal-600 mb-3">{service.icon}</div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{service.title}</h3>
                   <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
                 </div>
@@ -174,20 +243,41 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 lg:py-20 bg-gray-50">
+      <section className="py-20 lg:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">How It Works</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">How It Works</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { step: "1", title: "Book Online or Call Us", desc: "Schedule your appointment through our website or call our helpline" },
-              { step: "2", title: "Certified Nurse Assigned", desc: "We assign a qualified nurse based on your specific needs" },
-              { step: "3", title: "Nurse Visits Your Home", desc: "Our professional arrives at your home at the scheduled time" },
-              { step: "4", title: "Daily Progress Updates", desc: "Receive regular updates on patient progress and care plans" }
+              { step: "1", title: "Book Online or Call Us", desc: "Schedule your appointment through our website or call our helpline", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              )},
+              { step: "2", title: "Certified Nurse Assigned", desc: "We assign a qualified nurse based on your specific needs", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              )},
+              { step: "3", title: "Nurse Visits Your Home", desc: "Our professional arrives at your home at the scheduled time", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              )},
+              { step: "4", title: "Daily Progress Updates", desc: "Receive regular updates on patient progress and care plans", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              )}
             ].map((item, i) => (
               <div key={i} className="text-center">
-                <div className="w-16 h-16 bg-teal-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">{item.step}</div>
+                <div className="w-20 h-20 bg-teal-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 relative">
+                  <span className="text-2xl font-bold">{item.step}</span>
+                  <div className="absolute -bottom-2 -right-2 bg-teal-100 p-2 rounded-full text-teal-600">
+                    {item.icon}
+                  </div>
+                </div>
                 <h3 className="text-base font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
@@ -197,10 +287,10 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="py-16 lg:py-20 bg-white">
+      <section id="testimonials" className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Client Reviews</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Client Reviews</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -234,11 +324,11 @@ export default function Home() {
       </section>
 
       {/* Packages/Pricing */}
-      <section id="packages" className="py-16 lg:py-20 bg-gray-50">
+      <section id="packages" className="py-20 lg:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Care Packages</h2>
-            <p className="text-sm text-gray-600">Choose a package that suits your needs</p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Care Packages</h2>
+            <p className="text-base text-gray-600">Choose a package that suits your needs</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -276,7 +366,7 @@ export default function Home() {
       </section>
 
       {/* About Us */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-96 rounded-xl overflow-hidden">
@@ -288,8 +378,8 @@ export default function Home() {
               />
             </div>
             <div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">About Us</h2>
-              <p className="text-xs text-gray-600 mb-4 leading-relaxed">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">About Us</h2>
+              <p className="text-sm text-gray-600 mb-6 leading-relaxed">
                 We provide compassionate medical support to patients in the comfort of their homes. With years of experience in home healthcare, our team of certified nurses and physiotherapists is dedicated to delivering quality care that promotes healing and well-being.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-6">
@@ -322,21 +412,37 @@ export default function Home() {
       </section>
 
       {/* Safety Protocols */}
-      <section className="py-16 lg:py-20 bg-gray-50">
+      <section className="py-20 lg:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Safety Protocols</h2>
-            <p className="text-sm text-gray-600">Your safety is our priority</p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Safety Protocols</h2>
+            <p className="text-base text-gray-600">Your safety is our priority</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Gloves", desc: "Fresh gloves for every visit" },
-              { title: "Masks", desc: "Protective masks worn at all times" },
-              { title: "Hygiene Kit", desc: "Complete sanitization before each visit" },
-              { title: "Health Checks", desc: "Regular health screening of staff" }
+              { title: "Gloves", desc: "Fresh gloves for every visit", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              )},
+              { title: "Masks", desc: "Protective masks worn at all times", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              )},
+              { title: "Hygiene Kit", desc: "Complete sanitization before each visit", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+              )},
+              { title: "Health Checks", desc: "Regular health screening of staff", icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              )}
             ].map((item, i) => (
               <div key={i} className="bg-white p-6 rounded-xl text-center border border-gray-200">
-                <div className="text-3xl mb-3">🛡️</div>
+                <div className="text-teal-600 mb-3 flex justify-center">{item.icon}</div>
                 <h3 className="text-base font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-xs text-gray-600">{item.desc}</p>
               </div>
@@ -346,11 +452,11 @@ export default function Home() {
       </section>
 
       {/* Contact/Booking Form */}
-      <section id="contact" className="py-16 lg:py-20 bg-white">
+      <section id="contact" className="py-20 lg:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Request a Home Visit</h2>
-            <p className="text-sm text-gray-600">Fill out the form below and we'll get back to you shortly</p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Request a Home Visit</h2>
+            <p className="text-base text-gray-600">Fill out the form below and we'll get back to you shortly</p>
           </div>
           <div className="bg-gray-50 p-8 rounded-xl border border-gray-200">
             <form className="space-y-4">
@@ -406,26 +512,26 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-12">
+      <footer className="bg-white text-gray-700 py-12 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-bold text-white mb-4">CareAt<span className="text-teal-400">Home</span></h3>
-              <p className="text-xs mb-4 leading-relaxed">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">CareAt<span className="text-teal-600">Home</span></h3>
+              <p className="text-xs mb-4 leading-relaxed text-gray-600">
                 Professional home healthcare services with certified nurses and physiotherapists dedicated to your wellbeing.
               </p>
               <div className="flex gap-3">
-                <a href="#" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-colors">
+                <a href="#" className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-teal-600 hover:text-white transition-colors text-gray-600">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                   </svg>
                 </a>
-                <a href="#" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-colors">
+                <a href="#" className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-teal-600 hover:text-white transition-colors text-gray-600">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                   </svg>
                 </a>
-                <a href="#" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-colors">
+                <a href="#" className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-teal-600 hover:text-white transition-colors text-gray-600">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                   </svg>
@@ -433,48 +539,57 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4 text-sm">Services</h4>
+              <h4 className="text-white font-semibold mb-4 text-sm text-gray-900">Services</h4>
               <ul className="space-y-2 text-xs">
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Home Nursing Care</a></li>
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Physiotherapy</a></li>
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Elderly Care</a></li>
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Patient Attendant</a></li>
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Mother & Baby Care</a></li>
+                <li><a href="#" className="hover:text-teal-600 transition-colors text-gray-600">Home Nursing Care</a></li>
+                <li><a href="#" className="hover:text-teal-600 transition-colors text-gray-600">Physiotherapy</a></li>
+                <li><a href="#" className="hover:text-teal-600 transition-colors text-gray-600">Elderly Care</a></li>
+                <li><a href="#" className="hover:text-teal-600 transition-colors text-gray-600">Patient Attendant</a></li>
+                <li><a href="#" className="hover:text-teal-600 transition-colors text-gray-600">Mother & Baby Care</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4 text-sm">Company</h4>
+              <h4 className="text-white font-semibold mb-4 text-sm text-gray-900">Company</h4>
               <ul className="space-y-2 text-xs">
-                <li><a href="#" className="hover:text-teal-400 transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Our Team</a></li>
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Contact</a></li>
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-teal-600 transition-colors text-gray-600">About Us</a></li>
+                <li><a href="#" className="hover:text-teal-600 transition-colors text-gray-600">Our Team</a></li>
+                <li><a href="#" className="hover:text-teal-600 transition-colors text-gray-600">Careers</a></li>
+                <li><a href="#" className="hover:text-teal-600 transition-colors text-gray-600">Contact</a></li>
+                <li><a href="#" className="hover:text-teal-600 transition-colors text-gray-600">Privacy Policy</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4 text-sm">Contact</h4>
-              <ul className="space-y-2 text-xs">
+              <h4 className="text-white font-semibold mb-4 text-sm text-gray-900">Contact</h4>
+              <ul className="space-y-2 text-xs text-gray-600">
                 <li className="flex items-start gap-2">
-                  <span>📞</span>
+                  <svg className="w-4 h-4 mt-0.5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
                   <span>(555) 123-4567</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span>💬</span>
+                  <svg className="w-4 h-4 mt-0.5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
                   <span>+91 98765 43210</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span>📧</span>
+                  <svg className="w-4 h-4 mt-0.5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
                   <span>info@careathome.com</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span>📍</span>
+                  <svg className="w-4 h-4 mt-0.5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
                   <span>123 Healthcare St, Medical District, City 12345</span>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-xs">
+          <div className="border-t border-gray-200 pt-8 text-center text-xs text-gray-600">
             <p>&copy; 2024 CareAtHome. All rights reserved.</p>
           </div>
         </div>
