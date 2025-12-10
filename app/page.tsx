@@ -141,68 +141,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Image Slider Section */}
-      <section className="relative py-20 lg:py-32 bg-white flex items-center justify-center min-h-[60vh]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="text-center mb-10">
-            <h2 className="text-[48px] font-bold text-gray-900 mb-4">Our Care in Action</h2>
-            <p className="text-base text-gray-600">Witness our dedicated healthcare professionals providing compassionate care</p>
-          </div>
-          <div className="relative h-[350px] md:h-[400px] lg:h-[450px] max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl border border-gray-200">
-            <div 
-              className="flex transition-transform duration-1000 ease-in-out h-full"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {sliderImages.map((img, index) => (
-                <div key={index} className="min-w-full h-full relative">
-                  <Image
-                    src={img}
-                    alt={`Patient care ${index + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Slider Navigation Dots */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
-              {sliderImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    currentSlide === index ? 'w-6 bg-white' : 'w-1.5 bg-white/60'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-
-            {/* Navigation Arrows */}
-            <button
-              onClick={() => setCurrentSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length)}
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/95 hover:bg-white text-teal-600 p-2.5 rounded-full shadow-md transition-all duration-300 hover:scale-110 z-10"
-              aria-label="Previous slide"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              onClick={() => setCurrentSlide((prev) => (prev + 1) % sliderImages.length)}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/95 hover:bg-white text-teal-600 p-2.5 rounded-full shadow-md transition-all duration-300 hover:scale-110 z-10"
-              aria-label="Next slide"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
       <section 
         id="services" 
@@ -584,6 +522,68 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Slider Section */}
+      <section className="relative py-20 lg:py-32 bg-white flex items-center justify-center min-h-[60vh]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="text-center mb-10">
+            <h2 className="text-[48px] font-bold text-gray-900 mb-4">Our Care in Action</h2>
+            <p className="text-base text-gray-600">Witness our dedicated healthcare professionals providing compassionate care</p>
+          </div>
+          <div className="relative h-[350px] md:h-[400px] lg:h-[450px] max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl border border-gray-200">
+            <div 
+              className="flex transition-transform duration-1000 ease-in-out h-full"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {sliderImages.map((img, index) => (
+                <div key={index} className="min-w-full h-full relative">
+                  <Image
+                    src={img}
+                    alt={`Patient care ${index + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Slider Navigation Dots */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+              {sliderImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    currentSlide === index ? 'w-6 bg-white' : 'w-1.5 bg-white/60'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length)}
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/95 hover:bg-white text-teal-600 p-2.5 rounded-full shadow-md transition-all duration-300 hover:scale-110 z-10"
+              aria-label="Previous slide"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev + 1) % sliderImages.length)}
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/95 hover:bg-white text-teal-600 p-2.5 rounded-full shadow-md transition-all duration-300 hover:scale-110 z-10"
+              aria-label="Next slide"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
