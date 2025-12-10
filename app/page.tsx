@@ -110,7 +110,7 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1920&h=1080&fit=crop"
+            src="https://plus.unsplash.com/premium_photo-1683121665192-4f1896dd5177?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bnVyc2UlMjBob21lJTIwY2FyZXxlbnwwfHwwfHx8MA%3D%3D"
             alt="Professional nurse"
             fill
             className="object-cover"
@@ -142,13 +142,13 @@ export default function Home() {
       </section>
 
       {/* Image Slider Section */}
-      <section className="relative py-16 lg:py-20 bg-gray-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+      <section className="relative py-20 lg:py-32 bg-white flex items-center justify-center min-h-[60vh]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="text-center mb-10">
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">Our Care in Action</h2>
             <p className="text-base text-gray-600">Witness our dedicated healthcare professionals providing compassionate care</p>
           </div>
-          <div className="relative h-64 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative h-[350px] md:h-[400px] lg:h-[450px] max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl border border-gray-200">
             <div 
               className="flex transition-transform duration-1000 ease-in-out h-full"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -161,19 +161,19 @@ export default function Home() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
                 </div>
               ))}
             </div>
             
             {/* Slider Navigation Dots */}
-            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
               {sliderImages.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    currentSlide === index ? 'w-8 bg-white' : 'w-2 bg-white/50'
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    currentSlide === index ? 'w-6 bg-white' : 'w-1.5 bg-white/60'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -183,19 +183,19 @@ export default function Home() {
             {/* Navigation Arrows */}
             <button
               onClick={() => setCurrentSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length)}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-teal-600 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/95 hover:bg-white text-teal-600 p-2.5 rounded-full shadow-md transition-all duration-300 hover:scale-110 z-10"
               aria-label="Previous slide"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             <button
               onClick={() => setCurrentSlide((prev) => (prev + 1) % sliderImages.length)}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-teal-600 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/95 hover:bg-white text-teal-600 p-2.5 rounded-full shadow-md transition-all duration-300 hover:scale-110 z-10"
               aria-label="Next slide"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
