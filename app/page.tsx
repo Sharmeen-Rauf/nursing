@@ -144,9 +144,9 @@ export default function Home() {
                 </svg>
               )}
             ].map((service, i) => (
-              <div key={i} className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-all border border-gray-100">
-                <div className="text-teal-600 mb-4">{service.icon}</div>
-                <h3 className="text-base font-bold text-gray-900 mb-2">{service.title}</h3>
+              <div key={i} className="group bg-gray-50 p-6 rounded-xl border border-gray-100 cursor-pointer transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] hover:border-teal-300 hover:bg-white">
+                <div className="text-teal-600 mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">{service.icon}</div>
+                <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors duration-300">{service.title}</h3>
                 <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
               </div>
             ))}
@@ -193,9 +193,9 @@ export default function Home() {
                 </svg>
               )}
             ].map((item, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl border border-gray-200">
-                <div className="w-12 h-12 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center mb-4">{item.icon}</div>
-                <h3 className="text-base font-bold text-gray-900 mb-2">{item.title}</h3>
+              <div key={i} className="group bg-white p-6 rounded-xl border border-gray-200 cursor-pointer transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] hover:border-teal-300 hover:bg-teal-50">
+                <div className="w-12 h-12 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-teal-600 group-hover:text-white group-hover:rotate-6">{item.icon}</div>
+                <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors duration-300">{item.title}</h3>
                 <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -227,13 +227,14 @@ export default function Home() {
                 </svg>
               ), image: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=600&h=400&fit=crop" }
             ].map((service, i) => (
-              <div key={i} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-200">
-                <div className="relative h-48">
-                  <Image src={service.image} alt={service.title} fill className="object-cover" />
+              <div key={i} className="group bg-white rounded-xl overflow-hidden shadow-md border border-gray-200 cursor-pointer transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-3 hover:scale-[1.03] hover:border-teal-300">
+                <div className="relative h-48 overflow-hidden">
+                  <Image src={service.image} alt={service.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-teal-600/0 group-hover:bg-teal-600/10 transition-all duration-300"></div>
                 </div>
                 <div className="p-6">
-                  <div className="text-teal-600 mb-3">{service.icon}</div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{service.title}</h3>
+                  <div className="text-teal-600 mb-3 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6">{service.icon}</div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors duration-300">{service.title}</h3>
                   <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
                 </div>
               </div>
@@ -271,14 +272,14 @@ export default function Home() {
                 </svg>
               )}
             ].map((item, i) => (
-              <div key={i} className="text-center">
-                <div className="w-20 h-20 bg-teal-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 relative">
-                  <span className="text-2xl font-bold">{item.step}</span>
-                  <div className="absolute -bottom-2 -right-2 bg-teal-100 p-2 rounded-full text-teal-600">
+              <div key={i} className="group text-center cursor-pointer transition-all duration-300 ease-out hover:-translate-y-2">
+                <div className="w-20 h-20 bg-teal-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 relative transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:bg-teal-700 group-hover:rotate-3">
+                  <span className="text-2xl font-bold transition-transform duration-300 group-hover:scale-110">{item.step}</span>
+                  <div className="absolute -bottom-2 -right-2 bg-teal-100 p-2 rounded-full text-teal-600 transition-all duration-300 group-hover:scale-125 group-hover:bg-teal-600 group-hover:text-white">
                     {item.icon}
                   </div>
                 </div>
-                <h3 className="text-base font-bold text-gray-900 mb-2">{item.title}</h3>
+                <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors duration-300">{item.title}</h3>
                 <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -299,21 +300,21 @@ export default function Home() {
               { name: "Amit Patel", review: "24/7 availability is a blessing. The nurses are experienced and compassionate. Highly recommend!", rating: 5, location: "Bangalore" },
               { name: "Sunita Reddy", review: "Affordable packages with quality care. The team is professional and understanding. Great service!", rating: 5, location: "Hyderabad" }
             ].map((testimonial, i) => (
-              <div key={i} className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+              <div key={i} className="group bg-gray-50 p-6 rounded-xl border border-gray-200 cursor-pointer transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] hover:border-teal-300 hover:bg-white">
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(testimonial.rating)].map((_, j) => (
-                    <svg key={j} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={j} className="w-4 h-4 text-yellow-400 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12" fill="currentColor" viewBox="0 0 20 20" style={{ transitionDelay: `${j * 50}ms` }}>
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
-                <p className="text-xs text-gray-600 mb-4 italic leading-relaxed">"{testimonial.review}"</p>
+                <p className="text-xs text-gray-600 mb-4 italic leading-relaxed group-hover:text-gray-700 transition-colors duration-300">"{testimonial.review}"</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center text-teal-600 font-bold text-sm">
+                  <div className="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center text-teal-600 font-bold text-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-teal-600 group-hover:text-white">
                     {testimonial.name.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-gray-900">{testimonial.name}</div>
+                    <div className="text-sm font-bold text-gray-900 group-hover:text-teal-600 transition-colors duration-300">{testimonial.name}</div>
                     <div className="text-xs text-gray-500">{testimonial.location}</div>
                   </div>
                 </div>
@@ -336,26 +337,30 @@ export default function Home() {
               { name: "Standard", hours: "6 hours", features: ["Nursing + Physiotherapy", "Health assessments", "Daily reports"], price: "₹1,800" },
               { name: "Premium", hours: "12-24 hour", features: ["Full-time trained nurse", "Complete care management", "24/7 support"], price: "₹3,500" }
             ].map((pkg, i) => (
-              <div key={i} className={`bg-white p-8 rounded-xl border-2 ${i === 1 ? 'border-teal-600 shadow-lg scale-105' : 'border-gray-200'} transition-all`}>
+              <div key={i} className={`group bg-white p-8 rounded-xl border-2 cursor-pointer transition-all duration-300 ease-out ${
+                i === 1 
+                  ? 'border-teal-600 shadow-lg scale-105 hover:scale-110 hover:shadow-2xl hover:-translate-y-2' 
+                  : 'border-gray-200 hover:border-teal-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02]'
+              }`}>
                 <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
-                  <div className="text-3xl font-bold text-teal-600 mb-1">{pkg.price}<span className="text-sm text-gray-600 font-normal">/day</span></div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors duration-300">{pkg.name}</h3>
+                  <div className="text-3xl font-bold text-teal-600 mb-1 transition-transform duration-300 group-hover:scale-110">{pkg.price}<span className="text-sm text-gray-600 font-normal">/day</span></div>
                   <p className="text-xs text-gray-600">{pkg.hours} home care</p>
                 </div>
                 <ul className="space-y-3 mb-6">
                   {pkg.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-2 text-xs text-gray-600">
-                      <svg className="w-4 h-4 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
+                    <li key={j} className="flex items-center gap-2 text-xs text-gray-600 group-hover:text-gray-700 transition-colors duration-300" style={{ transitionDelay: `${j * 50}ms` }}>
+                      <svg className="w-4 h-4 text-teal-600 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <button className={`w-full py-3 rounded-full font-semibold text-sm transition-all ${
+                <button className={`w-full py-3 rounded-full font-semibold text-sm transition-all duration-300 ${
                   i === 1 
-                    ? 'bg-teal-600 text-white hover:bg-teal-700' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-teal-600 text-white hover:bg-teal-700 group-hover:scale-105 group-hover:shadow-lg' 
+                    : 'bg-gray-100 text-gray-700 hover:bg-teal-600 hover:text-white group-hover:scale-105'
                 }`}>
                   Select Package
                 </button>
@@ -441,10 +446,10 @@ export default function Home() {
                 </svg>
               )}
             ].map((item, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl text-center border border-gray-200">
-                <div className="text-teal-600 mb-3 flex justify-center">{item.icon}</div>
-                <h3 className="text-base font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-xs text-gray-600">{item.desc}</p>
+              <div key={i} className="group bg-white p-6 rounded-xl text-center border border-gray-200 cursor-pointer transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] hover:border-teal-300 hover:bg-teal-50">
+                <div className="text-teal-600 mb-3 flex justify-center transition-all duration-300 group-hover:scale-125 group-hover:rotate-6">{item.icon}</div>
+                <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors duration-300">{item.title}</h3>
+                <p className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors duration-300">{item.desc}</p>
               </div>
             ))}
           </div>
